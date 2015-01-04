@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MSConstants.h"
+#import "MSPlayViewController.h"
+#import "MSStartViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,46 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    MSStartViewController *_startViewController = [MSStartViewController startViewController];
+    
+    
+    //setings 初回起動時
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"settings"]){
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@{@"fieldType":MSFieldType5x5, @"numberOfBombs":@(5)} forKey:@"settings"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }
+    
+    //best score
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"bestScore"]){
+        
+        NSDictionary *bestScoreDict = @{
+                                        MSBestScoreTypeField5x5_type1:@(0),
+                                        MSBestScoreTypeField5x5_type2:@(0),
+                                        MSBestScoreTypeField5x5_type3:@(0),
+                                        MSBestScoreTypeField9x9_type1:@(0),
+                                        MSBestScoreTypeField9x9_type2:@(0),
+                                        MSBestScoreTypeField9x9_type3:@(0),
+                                        MSBestScoreTypeField12x12_type1:@(0),
+                                        MSBestScoreTypeField12x12_type2:@(0),
+                                        MSBestScoreTypeField12x12_type3:@(0)
+                                        };
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@{
+                                                           @"currentFieldType":MSBestScoreTypeField5x5_type1,
+                                                           @"bestScore":bestScoreDict}
+                                                  forKey:@"bestScore"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }
+    
+    
+    self.window.rootViewController = _startViewController;
+    
     return YES;
 }
 

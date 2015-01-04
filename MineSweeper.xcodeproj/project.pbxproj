@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		691C18451A5703FA001C3FA4 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691C18441A5703FA001C3FA4 /* MSSettingsViewController.m */; };
 		6935D15C1A53E7A800BCE45F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D15B1A53E7A800BCE45F /* main.m */; };
 		6935D15F1A53E7A800BCE45F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D15E1A53E7A800BCE45F /* AppDelegate.m */; };
-		6935D1621A53E7A800BCE45F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1611A53E7A800BCE45F /* ViewController.m */; };
 		6935D1651A53E7A800BCE45F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6935D1631A53E7A800BCE45F /* Main.storyboard */; };
 		6935D1671A53E7A800BCE45F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6935D1661A53E7A800BCE45F /* Images.xcassets */; };
 		6935D16A1A53E7A800BCE45F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6935D1681A53E7A800BCE45F /* LaunchScreen.xib */; };
 		6935D1761A53E7A800BCE45F /* MineSweeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1751A53E7A800BCE45F /* MineSweeperTests.m */; };
+		6935D1831A53E81B00BCE45F /* MSMass.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1821A53E81B00BCE45F /* MSMass.m */; };
+		6935D1871A53E8A400BCE45F /* MSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1861A53E8A400BCE45F /* MSConstants.m */; };
+		6935D18A1A53EA2900BCE45F /* MSMassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1891A53EA2900BCE45F /* MSMassManager.m */; };
+		6935D18D1A53EBF400BCE45F /* MSStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D18C1A53EBF400BCE45F /* MSStartViewController.m */; };
+		6935D1901A53EC0500BCE45F /* MSPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D18F1A53EC0500BCE45F /* MSPlayViewController.m */; };
+		69783DEB1A579AB300DE1EE8 /* MSSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69783DEA1A579AB300DE1EE8 /* MSSettings.storyboard */; };
+		69783DEF1A57F2CA00DE1EE8 /* MSStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69783DEE1A57F2CA00DE1EE8 /* MSStart.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +34,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		691C18431A5703FA001C3FA4 /* MSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingsViewController.h; sourceTree = "<group>"; };
+		691C18441A5703FA001C3FA4 /* MSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSettingsViewController.m; sourceTree = "<group>"; };
 		6935D1561A53E7A800BCE45F /* MineSweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MineSweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6935D15A1A53E7A800BCE45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6935D15B1A53E7A800BCE45F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6935D15D1A53E7A800BCE45F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6935D15E1A53E7A800BCE45F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6935D1601A53E7A800BCE45F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6935D1611A53E7A800BCE45F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6935D1641A53E7A800BCE45F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6935D1661A53E7A800BCE45F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6935D1691A53E7A800BCE45F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6935D16F1A53E7A800BCE45F /* MineSweeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MineSweeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6935D1741A53E7A800BCE45F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6935D1751A53E7A800BCE45F /* MineSweeperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineSweeperTests.m; sourceTree = "<group>"; };
+		6935D1811A53E81B00BCE45F /* MSMass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMass.h; sourceTree = "<group>"; };
+		6935D1821A53E81B00BCE45F /* MSMass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMass.m; sourceTree = "<group>"; };
+		6935D1851A53E8A400BCE45F /* MSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSConstants.h; sourceTree = "<group>"; };
+		6935D1861A53E8A400BCE45F /* MSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSConstants.m; sourceTree = "<group>"; };
+		6935D1881A53EA2900BCE45F /* MSMassManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMassManager.h; sourceTree = "<group>"; };
+		6935D1891A53EA2900BCE45F /* MSMassManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMassManager.m; sourceTree = "<group>"; };
+		6935D18B1A53EBF400BCE45F /* MSStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStartViewController.h; sourceTree = "<group>"; };
+		6935D18C1A53EBF400BCE45F /* MSStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStartViewController.m; sourceTree = "<group>"; };
+		6935D18E1A53EC0500BCE45F /* MSPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPlayViewController.h; sourceTree = "<group>"; };
+		6935D18F1A53EC0500BCE45F /* MSPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPlayViewController.m; sourceTree = "<group>"; };
+		69783DEA1A579AB300DE1EE8 /* MSSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MSSettings.storyboard; sourceTree = "<group>"; };
+		69783DEE1A57F2CA00DE1EE8 /* MSStart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MSStart.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		691C18421A5703E8001C3FA4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				691C18431A5703FA001C3FA4 /* MSSettingsViewController.h */,
+				691C18441A5703FA001C3FA4 /* MSSettingsViewController.m */,
+				69783DEA1A579AB300DE1EE8 /* MSSettings.storyboard */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		6935D14D1A53E7A800BCE45F = {
 			isa = PBXGroup;
 			children = (
@@ -81,10 +110,11 @@
 		6935D1581A53E7A800BCE45F /* MineSweeper */ = {
 			isa = PBXGroup;
 			children = (
+				6935D1841A53E87900BCE45F /* Utils */,
+				6935D1801A53E7D200BCE45F /* Model */,
+				6935D17F1A53E7C100BCE45F /* ViewController */,
 				6935D15D1A53E7A800BCE45F /* AppDelegate.h */,
 				6935D15E1A53E7A800BCE45F /* AppDelegate.m */,
-				6935D1601A53E7A800BCE45F /* ViewController.h */,
-				6935D1611A53E7A800BCE45F /* ViewController.m */,
 				6935D1631A53E7A800BCE45F /* Main.storyboard */,
 				6935D1661A53E7A800BCE45F /* Images.xcassets */,
 				6935D1681A53E7A800BCE45F /* LaunchScreen.xib */,
@@ -117,6 +147,55 @@
 				6935D1741A53E7A800BCE45F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6935D17F1A53E7C100BCE45F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6935D1921A53EC2100BCE45F /* Play */,
+				691C18421A5703E8001C3FA4 /* Settings */,
+				6935D1911A53EC1000BCE45F /* Start */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		6935D1801A53E7D200BCE45F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6935D1811A53E81B00BCE45F /* MSMass.h */,
+				6935D1821A53E81B00BCE45F /* MSMass.m */,
+				6935D1881A53EA2900BCE45F /* MSMassManager.h */,
+				6935D1891A53EA2900BCE45F /* MSMassManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6935D1841A53E87900BCE45F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6935D1851A53E8A400BCE45F /* MSConstants.h */,
+				6935D1861A53E8A400BCE45F /* MSConstants.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		6935D1911A53EC1000BCE45F /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				6935D18B1A53EBF400BCE45F /* MSStartViewController.h */,
+				6935D18C1A53EBF400BCE45F /* MSStartViewController.m */,
+				69783DEE1A57F2CA00DE1EE8 /* MSStart.storyboard */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
+		6935D1921A53EC2100BCE45F /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				6935D18E1A53EC0500BCE45F /* MSPlayViewController.h */,
+				6935D18F1A53EC0500BCE45F /* MSPlayViewController.m */,
+			);
+			name = Play;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6935D1651A53E7A800BCE45F /* Main.storyboard in Resources */,
+				69783DEF1A57F2CA00DE1EE8 /* MSStart.storyboard in Resources */,
+				69783DEB1A579AB300DE1EE8 /* MSSettings.storyboard in Resources */,
 				6935D16A1A53E7A800BCE45F /* LaunchScreen.xib in Resources */,
 				6935D1671A53E7A800BCE45F /* Images.xcassets in Resources */,
 			);
@@ -219,9 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6935D1621A53E7A800BCE45F /* ViewController.m in Sources */,
+				6935D1901A53EC0500BCE45F /* MSPlayViewController.m in Sources */,
+				691C18451A5703FA001C3FA4 /* MSSettingsViewController.m in Sources */,
 				6935D15F1A53E7A800BCE45F /* AppDelegate.m in Sources */,
+				6935D1871A53E8A400BCE45F /* MSConstants.m in Sources */,
+				6935D18A1A53EA2900BCE45F /* MSMassManager.m in Sources */,
 				6935D15C1A53E7A800BCE45F /* main.m in Sources */,
+				6935D1831A53E81B00BCE45F /* MSMass.m in Sources */,
+				6935D18D1A53EBF400BCE45F /* MSStartViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +366,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -297,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -322,6 +409,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -333,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
 				INFOPLIST_FILE = MineSweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
 				INFOPLIST_FILE = MineSweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +504,7 @@
 				6935D17B1A53E7A800BCE45F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6935D17C1A53E7A800BCE45F /* Build configuration list for PBXNativeTarget "MineSweeperTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +513,7 @@
 				6935D17E1A53E7A800BCE45F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
