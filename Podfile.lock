@@ -1,0 +1,16 @@
+PODS:
+  - Appirater (2.0.4)
+  - Google-Mobile-Ads-SDK (6.12.2)
+  - GrowthPush (1.2.1)
+
+DEPENDENCIES:
+  - Appirater
+  - Google-Mobile-Ads-SDK (~> 6.12)
+  - GrowthPush
+
+SPEC CHECKSUMS:
+  Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
+  Google-Mobile-Ads-SDK: 9761186eb5dc5e1493e71dcce2b525159f763d42
+  GrowthPush: 457b788fd9e911e441546f8a3d175cc967bb6ba1
+
+COCOAPODS: 0.34.4

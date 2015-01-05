@@ -39,7 +39,8 @@ extern NSString *const MSMassImageNameEight;
 extern NSString *const MSButtonImageNameHome;
 extern NSString *const MSButtonImageNameRetry;
 extern NSString *const MSButtonImageNameMineCheck;
-extern NSString *const MSButtonImageNameTweet;
+extern NSString *const MSButtonImageNameFacebook;
+extern NSString *const MSButtonImageNameTwitter;
 
 
 extern NSString *const MSImageNameHomeMines;
@@ -56,3 +57,9 @@ extern NSString *const MSBestScoreTypeField9x9_type3;
 extern NSString *const MSBestScoreTypeField12x12_type1;
 extern NSString *const MSBestScoreTypeField12x12_type2;
 extern NSString *const MSBestScoreTypeField12x12_type3;
+
+extern NSString *const MSGADAdUnitID;
+
+extern NSString *const MSIMobilePublisherID;
+extern NSString *const MSIMobileMediaID;
+extern NSString *const MSIMobileSpotID;

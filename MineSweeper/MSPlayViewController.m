@@ -13,11 +13,14 @@
 
 //TODO: pchに変更
 #import "MSConstants.h"
+#import <Social/Social.h>
+
+#import "GADBannerView.h"
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
-@interface MSPlayViewController ()
+@interface MSPlayViewController () <GADBannerViewDelegate>
 {
     
     
@@ -49,6 +52,8 @@
     UIView *_resultView; //結果画像
     
     NSMutableArray *masses; //すべてのマスを管理
+    
+    GADBannerView *_bannerView;
 }
 
 @end
@@ -93,6 +98,14 @@
     [self initGame];
     
     [self startCount];
+    
+    _bannerView = [[GADBannerView alloc]initWithAdSize:kGADAdSizeMediumRectangle];
+    _bannerView.adUnitID = MSGADAdUnitID;
+    _bannerView.rootViewController = self;
+    _bannerView.delegate = self;
+    
+    [_bannerView loadRequest:[GADRequest request]];
+    
 }
 
 -(void)setButton{
@@ -292,32 +305,85 @@
     
     [self retry];
 }
--(void)tappedTweetBtn:(UIButton*)button{
-    NSLog(@"Tweet");
+-(void)tappedFacebookBtn:(UIButton*)button{
+    
+    if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Share Error"
+                                                        message:@"This iPhone doesn't have a facebook account."
+                                                       delegate:nil
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        [alert show];
+        return;
+    }
+    
+    NSString *text = [NSString stringWithFormat:@"【   MINE SWEEPER   】\n*** CLEAR! (%.1fsec) ***\nFIELD : %dx%d\nBOMBS : %d\n\n",_time,_numberOfColsInField,_numberOfColsInField,_amountOfBombs];
+    NSURL *URL = [NSURL URLWithString:@"https://itunes.apple.com/jp/app/mine-sweeper/id955311550?ls=1&mt=8"];
+    NSData *imageData = [[NSData alloc]initWithData:UIImagePNGRepresentation([UIImage imageNamed:@"logo_minesweeper"])];
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [controller setInitialText:text];
+    [controller addURL:URL];
+    [controller addImage:[[UIImage alloc] initWithData:imageData]];
+    controller.completionHandler =^(SLComposeViewControllerResult result){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    
+    [self presentViewController:controller animated:YES completion:nil];
+    
+}
+
+-(void)tappedTwitterBtn:(UIButton*)button{
+    
+    if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tweet Error"
+                                                        message:@"This iPhone doesn't have a twitter account."
+                                                       delegate:nil
+                                              cancelButtonTitle:nil
+                                              otherButtonTitles:@"OK", nil];
+        [alert show];
+        return;
+    }
+    
+    NSString *text = [NSString stringWithFormat:@"【   MINE SWEEPER   】\n*** CLEAR! (%.1fsec) ***\nFIELD : %dx%d\nBOMBS : %d\n\n",_time,_numberOfColsInField,_numberOfColsInField,_amountOfBombs];
+    NSURL *URL = [NSURL URLWithString:@"https://itunes.apple.com/jp/app/mine-sweeper/id955311550?ls=1&mt=8"];
+    NSData *imageData = [[NSData alloc]initWithData:UIImagePNGRepresentation([UIImage imageNamed:@"logo_minesweeper"])];
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [controller setInitialText:text];
+    [controller addURL:URL];
+    [controller addImage:[[UIImage alloc] initWithData:imageData]];
+    controller.completionHandler =^(SLComposeViewControllerResult result){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    
 }
 
 -(void)mineCheck{
     
-    
-    //すべてのマスからisDisplayedがNOのマスを画像切替え
-    if(selectCheck == NO){
-        selectCheck = YES;
-//        for(MSMass *m in [MSMassManager sharedManager].masses){
-        for(MSMass *m in masses){
-            
-            if(!m.isDisplayed && !m.isChecked){
-                [m setMassImageWithName:MSMassImageNameSelectableCheck];
-            }
-            
-        }
-    }else{
+    if(!isEnd){
         
-        selectCheck = NO;
-//        for(MSMass *m in [MSMassManager sharedManager].masses){
-        for(MSMass *m in masses){
+        //すべてのマスからisDisplayedがNOのマスを画像切替え
+        if(selectCheck == NO){
+            selectCheck = YES;
+            //        for(MSMass *m in [MSMassManager sharedManager].masses){
+            for(MSMass *m in masses){
+                
+                if(!m.isDisplayed && !m.isChecked){
+                    [m setMassImageWithName:MSMassImageNameSelectableCheck];
+                }
+                
+            }
+        }else{
             
-            if(!m.isDisplayed && !m.isChecked){
-                [m setMassImageWithName:MSMassImageNameDefault];
+            selectCheck = NO;
+            //        for(MSMass *m in [MSMassManager sharedManager].masses){
+            for(MSMass *m in masses){
+                
+                if(!m.isDisplayed && !m.isChecked){
+                    [m setMassImageWithName:MSMassImageNameDefault];
+                }
+                
             }
             
         }
@@ -351,8 +417,8 @@
     [self initGame];
     [self startCount];
     
+    
 }
-
 
 
 #pragma mark - start count
@@ -361,18 +427,41 @@
     _timeCount = 3;
     
     _countView = [[UIView alloc]initWithFrame:self.view.frame];
-    _countView.backgroundColor = [UIColor blackColor];
-    _countView.alpha = 0.5;
+    _countView.backgroundColor = [RGB(0, 0, 0) colorWithAlphaComponent:0.5];
     
     _countLabel = [[UILabel alloc]init];
-    _countLabel.frame = CGRectMake((_countView.frame.size.width - 100)/2, CGRectGetMidY(_countView.frame) - 50, 100, 100);
     _countLabel.textAlignment = NSTextAlignmentCenter;
     _countLabel.text = [NSString stringWithFormat:@"%d",_timeCount];
-    _countLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:100];
+    _countLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:50];
     _countLabel.textColor = [UIColor whiteColor];
     
     
+    if(_widthOfDisplay == MSSIZE_OF_IPHONE_5){
+        
+        _countLabel.frame = CGRectMake((_countView.frame.size.width - 100)/2, CGRectGetMidY(_countView.frame) - + 200, 100, 60);
+        
+        
+    }else if(_widthOfDisplay == MSSIZE_OF_IPHONE_6){
+        
+    _countLabel.frame = CGRectMake((_countView.frame.size.width - 100)/2, CGRectGetMidY(_countView.frame) - + 200, 100, 60);
+        
+    }else if(_widthOfDisplay == MSSIZE_OF_IPHONE_6P){
+        
+    _countLabel.frame = CGRectMake((_countView.frame.size.width - 100)/2, CGRectGetMidY(_countView.frame) - + 200, 100, 60);
+        
+    }else{
+        
+    _countLabel.frame = CGRectMake((_countView.frame.size.width - 100)/2, CGRectGetMidY(_countView.frame) - + 200, 100, 60);
+    }
+    
+    _bannerView.frame = CGRectMake((_countView.frame.size.width - _bannerView.frame.size.width)/2,
+                                   (_countView.frame.size.height - _bannerView.frame.size.height)/2,
+                                   _bannerView.frame.size.width,
+                                   _bannerView.frame.size.height);
+    
+    
     [_countView addSubview:_countLabel];
+    [_countView addSubview:_bannerView];
     [self.view addSubview:_countView];
     
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
@@ -397,6 +486,7 @@
     
     [_countView removeFromSuperview];
     _countView = nil;
+    
     
 }
 
@@ -455,7 +545,7 @@
         
         _timeLabel.frame = CGRectMake(self.view.frame.size.width - 200 - 10, self.view.frame.origin.y + 30, 200, 40);
         label.frame = CGRectMake(self.view.frame.origin.x + 10, self.view.frame.origin.y + 30, 200, 40);
-        NSLog(@"%f",_widthOfDisplay);
+        //NSLog(@"%f",_widthOfDisplay);
         
     }
     
@@ -509,7 +599,7 @@
         
         if([mass.massType isEqualToString:MSMassTypeBomb]){
             
-            NSLog(@"ゲームオーバー！");
+            //NSLog(@"ゲームオーバー！");
             isEnd = YES;
             [mass setMassImageWithName:MSMassImageNameBomb];
             mass.tintColor = [UIColor clearColor];
@@ -520,12 +610,12 @@
             
         }else if([mass.massType isEqualToString:MSMassTypeNumber]){
             
-            NSLog(@"数字");
+            //NSLog(@"数字");
             [mass setMassImageWithNumber:[mass.number intValue]];
             [mass setTitle:[NSString stringWithFormat:@"%d",[mass.number intValue]] forState:UIControlStateNormal];
             
         }else{ //空白
-            NSLog(@"空白");
+            //NSLog(@"空白");
             [mass setBackgroundImage:[UIImage imageNamed:@"mineBlank.png"] forState:UIControlStateNormal];
             //空白の場合、そのマスの周りのマスを見る。
             //もし周りのマスで空白があった場合、そのマスもflipする
@@ -570,47 +660,13 @@
 #pragma mark - game clear and over
 -(void)gameClear{
     
-    NSLog(@"game clear");
+    //NSLog(@"game clear");
     isEnd = YES;
     
     [self updateBestScore];
     
     //結果画面表示
-    
-    _resultView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x + 10,
-                                                          (self.view.frame.size.height - _numberOfColsInField * _boxLength)/2  - 70,
-                                                         self.view.frame.size.width - 10*2,
-                                                         self.view.frame.size.width - 10*2)];
-    _resultView.backgroundColor = [RGB(245, 245, 245) colorWithAlphaComponent:0.7];
-    
-    //ゲームクリアラベル
-    UILabel *clearLabel = [[UILabel alloc]init];
-    clearLabel.text = @"GAME CLEAR";
-    clearLabel.textAlignment = NSTextAlignmentCenter;
-    
-    //TweetBtn
-    UIButton *tweetBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [tweetBtn setBackgroundImage:[UIImage imageNamed:MSButtonImageNameTweet] forState:UIControlStateNormal];
-    [tweetBtn addTarget:self action:@selector(tappedTweetBtn:) forControlEvents:UIControlEventTouchUpInside];
-    
-    if(_widthOfDisplay == MSSIZE_OF_IPHONE_5){
-        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:24];
-        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 300)/2, _resultView.frame.origin.y + 10, 300, 100);
-        [tweetBtn setFrame:CGRectMake((_resultView.frame.size.width - 200)/2, _resultView.frame.size.height - 200 - 20, 200,60)];
-    }else if(_widthOfDisplay == MSSIZE_OF_IPHONE_6){
-        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:32];
-        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 300)/2, 10, 300, 100);
-        [tweetBtn setFrame:CGRectMake((_resultView.frame.size.width - 200)/2, - 20, 200,60)];
-    }else{
-        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:32];
-        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 300)/2, 10, 300, 100);
-        [tweetBtn setFrame:CGRectMake((_resultView.frame.size.width - 220)/2,_resultView.frame.size.height - 80-20, 220,80)];
-    }
-    
-    //[_resultView addSubview:tweetBtn];
-    [_resultView addSubview:clearLabel];
-    
-    [self.view addSubview:_resultView];
+    [self addResultView];
     
     
     //すべての地雷マスを表示
@@ -655,6 +711,97 @@
     
 }
 
+-(void)addResultView{
+    
+    
+    _resultView = [[UIView alloc]initWithFrame:CGRectMake(self.view.frame.origin.x + 10,
+                                                          (self.view.frame.size.height - _numberOfColsInField * _boxLength)/2  - 70,
+                                                         self.view.frame.size.width - 10*2,
+                                                         self.view.frame.size.width - 10*2)];
+    _resultView.backgroundColor = [RGB(245, 245, 245) colorWithAlphaComponent:0.7];
+    _resultView.layer.cornerRadius = 15.f;
+    
+    //ゲームクリアラベル
+    UILabel *clearLabel = [[UILabel alloc]init];
+    clearLabel.text = @"GAME CLEAR";
+    clearLabel.textColor = RGB(100, 100, 100);
+    clearLabel.textAlignment = NSTextAlignmentCenter;
+    
+    //FacebookBtn
+    UIButton *facebookBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [facebookBtn setBackgroundImage:[UIImage imageNamed:MSButtonImageNameFacebook] forState:UIControlStateNormal];
+    [facebookBtn addTarget:self action:@selector(tappedFacebookBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //TweetBtn
+    UIButton *twitterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [twitterBtn setBackgroundImage:[UIImage imageNamed:MSButtonImageNameTwitter] forState:UIControlStateNormal];
+    [twitterBtn addTarget:self action:@selector(tappedTwitterBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    int lengthOfFbAndTwBtn = (_resultView.frame.size.width - 10)/2;
+    
+    
+    if(_widthOfDisplay == MSSIZE_OF_IPHONE_5){
+        
+        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:28];
+        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 300)/2, _resultView.frame.origin.y + 10, 300, 100);
+        
+        [facebookBtn setFrame:CGRectMake(self.view.frame.origin.x,
+                                     (self.view.frame.size.height - 60)/2 - 60,
+                                     lengthOfFbAndTwBtn, 60)];
+        
+        [twitterBtn setFrame:CGRectMake(self.view.frame.origin.x  + facebookBtn.frame.size.width + 10,
+                                     (self.view.frame.size.height - 60)/2 - 60,
+                                     lengthOfFbAndTwBtn, 60)];
+        
+    }else if(_widthOfDisplay == MSSIZE_OF_IPHONE_6){
+        
+        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:40];
+        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 300)/2, 10, 300, 220);
+        
+        [facebookBtn setFrame:CGRectMake(self.view.frame.origin.x,
+                                     (self.view.frame.size.height - 60)/2 - 60,
+                                     lengthOfFbAndTwBtn, 60)];
+        
+        [twitterBtn setFrame:CGRectMake(self.view.frame.origin.x  + facebookBtn.frame.size.width + 10,
+                                     (self.view.frame.size.height - 60)/2 - 60,
+                                     lengthOfFbAndTwBtn, 60)];
+        
+    }else if(_widthOfDisplay == MSSIZE_OF_IPHONE_6P){
+        
+        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:40];
+        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 300)/2, 150, 300, 50);
+        [facebookBtn setFrame:CGRectMake(self.view.frame.origin.x,
+                                     (self.view.frame.size.height - 60)/2 - 60,
+                                     lengthOfFbAndTwBtn, 80)];
+        
+        [twitterBtn setFrame:CGRectMake(self.view.frame.origin.x  + facebookBtn.frame.size.width + 10,
+                                     (self.view.frame.size.height - 60)/2 - 60,
+                                     lengthOfFbAndTwBtn, 80)];
+        
+    }else{
+        
+        clearLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:64];
+        clearLabel.frame = CGRectMake((_resultView.frame.size.width - 400)/2, 200, 400, 80);
+        
+        [facebookBtn setFrame:CGRectMake(self.view.frame.origin.x,
+                                     (self.view.frame.size.height - 150)/2 - 60,
+                                     lengthOfFbAndTwBtn, 150)];
+        
+        [twitterBtn setFrame:CGRectMake(self.view.frame.origin.x  + facebookBtn.frame.size.width + 10,
+                                     (self.view.frame.size.height - 150)/2 - 60,
+                                     lengthOfFbAndTwBtn, 150)];
+        
+    }
+    
+    //[_resultView addSubview:tweetBtn];
+    [_resultView addSubview:facebookBtn];
+    [_resultView addSubview:twitterBtn];
+    [_resultView addSubview:clearLabel];
+    
+    [self.view addSubview:_resultView];
+    
+}
+
 -(void)updateBestScore{
     
     NSString *currentFieldType = [[[NSUserDefaults standardUserDefaults] objectForKey:@"bestScore"] objectForKey:@"currentFieldType"];
@@ -689,7 +836,7 @@
             count++;
     }
     
-    NSLog(@"left masses count %d",count);
+    //NSLog(@"left masses count %d",count);
     return count;
     
 }
@@ -837,14 +984,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - GADBannerViewDelegate
+-(void)adView:(GADBannerView *)view didFailToReceiveAdWithError:(GADRequestError *)error{
+    
+   //NSLog(@"did fail to received ad with error %@",error);
+    
 }
-*/
 
 @end

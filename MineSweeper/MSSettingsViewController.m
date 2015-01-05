@@ -39,7 +39,7 @@
     
     //タップしたtagに応じてbombsのラベルを変更
     
-    NSLog(@"%d",_numberOfField);
+    //NSLog(@"%d",_numberOfField);
     
     //更新前の_numberOfField
     int bombTemp = 0;

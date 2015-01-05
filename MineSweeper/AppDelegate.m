@@ -11,6 +11,10 @@
 #import "MSPlayViewController.h"
 #import "MSStartViewController.h"
 
+#import <GrowthPush/GrowthPush.h>
+#import <Appirater/Appirater.h>
+
+
 @interface AppDelegate ()
 
 @end
@@ -20,6 +24,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   
+    //TODO: GrowthPush設定 for App Store
+//   [EasyGrowthPush setApplicationId:@"XXXX" secret:@"XXXX" environment:kGrowthPushEnvironment debug:NO];
+    
+    
+    [Appirater setAppId:@"955311550"];
+    [Appirater setDaysUntilPrompt:1];
+    [Appirater setUsesUntilPrompt:10];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:NO];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     

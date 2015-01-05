@@ -38,7 +38,8 @@ NSString *const MSMassImageNameEight                = @"mineEight";
 NSString *const MSButtonImageNameHome               = @"homeBtn";
 NSString *const MSButtonImageNameRetry              = @"retryBtn";
 NSString *const MSButtonImageNameMineCheck          = @"mineCheckBtn";
-NSString *const MSButtonImageNameTweet          = @"tweetBtn";
+NSString *const MSButtonImageNameFacebook          = @"facebookBtn";
+NSString *const MSButtonImageNameTwitter          = @"twitterBtn";
 
 NSString *const MSImageNameHomeMines         = @"homeMines";
 NSString *const MSImageNameBackBtn       = @"backItem";
@@ -54,3 +55,10 @@ NSString *const MSBestScoreTypeField9x9_type3       = @"MSBestScoreTypeFieldType
 NSString *const MSBestScoreTypeField12x12_type1     = @"MSBestScoreTypeFieldType12x12_type1";
 NSString *const MSBestScoreTypeField12x12_type2     = @"MSBestScoreTypeFieldType12x12_type2";
 NSString *const MSBestScoreTypeField12x12_type3     = @"MSBestScoreTypeFieldType12x12_type3";
+
+//TODO: Ad ID 設定 for App Store
+extern NSString *const MSGADAdUnitID    = @"XXXX";
+
+extern NSString *const MSIMobilePublisherID     = @"XXXX";
+extern NSString *const MSIMobileMediaID         = @"XXXX";
+extern NSString *const MSIMobileSpotID          = @"XXXX";

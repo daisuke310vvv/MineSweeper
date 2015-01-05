@@ -65,7 +65,7 @@
     
     [self printScoreLabel];
     
-    NSLog(@"bestscoretype %@",[[[NSUserDefaults standardUserDefaults] objectForKey:@"bestScore"] objectForKey:@"currentFieldType"]);
+    //NSLog(@"bestscoretype %@",[[[NSUserDefaults standardUserDefaults] objectForKey:@"bestScore"] objectForKey:@"currentFieldType"]);
     
 }
 

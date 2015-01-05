@@ -10,7 +10,6 @@
 		691C18451A5703FA001C3FA4 /* MSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691C18441A5703FA001C3FA4 /* MSSettingsViewController.m */; };
 		6935D15C1A53E7A800BCE45F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D15B1A53E7A800BCE45F /* main.m */; };
 		6935D15F1A53E7A800BCE45F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D15E1A53E7A800BCE45F /* AppDelegate.m */; };
-		6935D1651A53E7A800BCE45F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6935D1631A53E7A800BCE45F /* Main.storyboard */; };
 		6935D1671A53E7A800BCE45F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6935D1661A53E7A800BCE45F /* Images.xcassets */; };
 		6935D16A1A53E7A800BCE45F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6935D1681A53E7A800BCE45F /* LaunchScreen.xib */; };
 		6935D1761A53E7A800BCE45F /* MineSweeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1751A53E7A800BCE45F /* MineSweeperTests.m */; };
@@ -19,8 +18,15 @@
 		6935D18A1A53EA2900BCE45F /* MSMassManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D1891A53EA2900BCE45F /* MSMassManager.m */; };
 		6935D18D1A53EBF400BCE45F /* MSStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D18C1A53EBF400BCE45F /* MSStartViewController.m */; };
 		6935D1901A53EC0500BCE45F /* MSPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935D18F1A53EC0500BCE45F /* MSPlayViewController.m */; };
+		693D769C1A59312B00E50DA7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693D769B1A59312B00E50DA7 /* Social.framework */; };
+		69619B8A1A59717D00CEBA44 /* ImobileSdkAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69619B891A59717D00CEBA44 /* ImobileSdkAds.framework */; };
+		69619B8C1A59719D00CEBA44 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69619B8B1A59719D00CEBA44 /* SystemConfiguration.framework */; };
+		69619B8E1A5971A400CEBA44 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69619B8D1A5971A400CEBA44 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		69619B901A5971AE00CEBA44 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69619B8F1A5971AE00CEBA44 /* CoreLocation.framework */; };
+		69619B921A597FAD00CEBA44 /* libAdapterIMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69619B911A597FAD00CEBA44 /* libAdapterIMobile.a */; };
 		69783DEB1A579AB300DE1EE8 /* MSSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69783DEA1A579AB300DE1EE8 /* MSSettings.storyboard */; };
 		69783DEF1A57F2CA00DE1EE8 /* MSStart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69783DEE1A57F2CA00DE1EE8 /* MSStart.storyboard */; };
+		733546554A5899C50A4CBC1C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 921F9F9983A8615E07D11709 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30C2A0FEFCD6A0021794EED8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5BF46FDD43E4E77BE909263C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		691C18431A5703FA001C3FA4 /* MSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingsViewController.h; sourceTree = "<group>"; };
 		691C18441A5703FA001C3FA4 /* MSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSettingsViewController.m; sourceTree = "<group>"; };
 		6935D1561A53E7A800BCE45F /* MineSweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MineSweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,7 +49,6 @@
 		6935D15B1A53E7A800BCE45F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6935D15D1A53E7A800BCE45F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6935D15E1A53E7A800BCE45F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6935D1641A53E7A800BCE45F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6935D1661A53E7A800BCE45F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6935D1691A53E7A800BCE45F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6935D16F1A53E7A800BCE45F /* MineSweeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MineSweeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,8 +64,15 @@
 		6935D18C1A53EBF400BCE45F /* MSStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStartViewController.m; sourceTree = "<group>"; };
 		6935D18E1A53EC0500BCE45F /* MSPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPlayViewController.h; sourceTree = "<group>"; };
 		6935D18F1A53EC0500BCE45F /* MSPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPlayViewController.m; sourceTree = "<group>"; };
+		693D769B1A59312B00E50DA7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		69619B891A59717D00CEBA44 /* ImobileSdkAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImobileSdkAds.framework; sourceTree = "<group>"; };
+		69619B8B1A59719D00CEBA44 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		69619B8D1A5971A400CEBA44 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		69619B8F1A5971AE00CEBA44 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		69619B911A597FAD00CEBA44 /* libAdapterIMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdapterIMobile.a; sourceTree = "<group>"; };
 		69783DEA1A579AB300DE1EE8 /* MSSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MSSettings.storyboard; sourceTree = "<group>"; };
 		69783DEE1A57F2CA00DE1EE8 /* MSStart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MSStart.storyboard; sourceTree = "<group>"; };
+		921F9F9983A8615E07D11709 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69619B901A5971AE00CEBA44 /* CoreLocation.framework in Frameworks */,
+				69619B8E1A5971A400CEBA44 /* AdSupport.framework in Frameworks */,
+				69619B8C1A59719D00CEBA44 /* SystemConfiguration.framework in Frameworks */,
+				69619B8A1A59717D00CEBA44 /* ImobileSdkAds.framework in Frameworks */,
+				693D769C1A59312B00E50DA7 /* Social.framework in Frameworks */,
+				733546554A5899C50A4CBC1C /* libPods.a in Frameworks */,
+				69619B921A597FAD00CEBA44 /* libAdapterIMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A53B95299CE150015FC4760 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5BF46FDD43E4E77BE909263C /* Pods.debug.xcconfig */,
+				30C2A0FEFCD6A0021794EED8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		691C18421A5703E8001C3FA4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +122,12 @@
 		6935D14D1A53E7A800BCE45F = {
 			isa = PBXGroup;
 			children = (
+				693D769B1A59312B00E50DA7 /* Social.framework */,
 				6935D1581A53E7A800BCE45F /* MineSweeper */,
 				6935D1721A53E7A800BCE45F /* MineSweeperTests */,
 				6935D1571A53E7A800BCE45F /* Products */,
+				0A53B95299CE150015FC4760 /* Pods */,
+				E60410E587FFED8C0E4BE47F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,7 +148,6 @@
 				6935D17F1A53E7C100BCE45F /* ViewController */,
 				6935D15D1A53E7A800BCE45F /* AppDelegate.h */,
 				6935D15E1A53E7A800BCE45F /* AppDelegate.m */,
-				6935D1631A53E7A800BCE45F /* Main.storyboard */,
 				6935D1661A53E7A800BCE45F /* Images.xcassets */,
 				6935D1681A53E7A800BCE45F /* LaunchScreen.xib */,
 				6935D1591A53E7A800BCE45F /* Supporting Files */,
@@ -198,6 +230,19 @@
 			name = Play;
 			sourceTree = "<group>";
 		};
+		E60410E587FFED8C0E4BE47F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69619B911A597FAD00CEBA44 /* libAdapterIMobile.a */,
+				69619B8F1A5971AE00CEBA44 /* CoreLocation.framework */,
+				69619B8D1A5971A400CEBA44 /* AdSupport.framework */,
+				69619B8B1A59719D00CEBA44 /* SystemConfiguration.framework */,
+				69619B891A59717D00CEBA44 /* ImobileSdkAds.framework */,
+				921F9F9983A8615E07D11709 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +250,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6935D1791A53E7A800BCE45F /* Build configuration list for PBXNativeTarget "MineSweeper" */;
 			buildPhases = (
+				D10DC2F7078256A197F9806E /* Check Pods Manifest.lock */,
 				6935D1521A53E7A800BCE45F /* Sources */,
 				6935D1531A53E7A800BCE45F /* Frameworks */,
 				6935D1541A53E7A800BCE45F /* Resources */,
+				64992C33249CBDA9F57AD181 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,9 +294,11 @@
 				TargetAttributes = {
 					6935D1551A53E7A800BCE45F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9S2W4C6VNX;
 					};
 					6935D16E1A53E7A800BCE45F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 9S2W4C6VNX;
 						TestTargetID = 6935D1551A53E7A800BCE45F;
 					};
 				};
@@ -278,7 +327,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6935D1651A53E7A800BCE45F /* Main.storyboard in Resources */,
 				69783DEF1A57F2CA00DE1EE8 /* MSStart.storyboard in Resources */,
 				69783DEB1A579AB300DE1EE8 /* MSSettings.storyboard in Resources */,
 				6935D16A1A53E7A800BCE45F /* LaunchScreen.xib in Resources */,
@@ -294,6 +342,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64992C33249CBDA9F57AD181 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D10DC2F7078256A197F9806E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6935D1521A53E7A800BCE45F /* Sources */ = {
@@ -330,14 +411,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6935D1631A53E7A800BCE45F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6935D1641A53E7A800BCE45F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6935D1681A53E7A800BCE45F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +439,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -387,6 +460,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,7 +483,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -423,6 +497,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -431,23 +506,43 @@
 		};
 		6935D17A1A53E7A800BCE45F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BF46FDD43E4E77BE909263C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MineSweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		6935D17B1A53E7A800BCE45F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C2A0FEFCD6A0021794EED8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iOS Development: daisuke sato (9MF8K8KAXA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MineSweeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -455,6 +550,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -466,6 +563,7 @@
 				INFOPLIST_FILE = MineSweeperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MineSweeper.app/MineSweeper";
 			};
 			name = Debug;
@@ -474,6 +572,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -481,6 +581,7 @@
 				INFOPLIST_FILE = MineSweeperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MineSweeper.app/MineSweeper";
 			};
 			name = Release;
