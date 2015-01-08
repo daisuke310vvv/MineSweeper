@@ -1,7 +1,7 @@
 ## MINE SWEEPER
 This is very simple and most designable MINE SWEEPER ever.
 
-![MINE SWEEPER](./MineSweeper/Images/Icons/Icon512x512.png)
+![MINE SWEEPER](./MineSweeper/Images/Icons/logo_minesweeper256x256.png)
 
 ## NOTE
 
