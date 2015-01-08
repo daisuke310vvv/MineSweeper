@@ -1,5 +1,10 @@
 ## MINE SWEEPER
 This is very simple and most designable MINE SWEEPER ever.
-This App will be on App Store soon.
 
+## NOTE
 
+you need to execute this on the terminal to install third party libralies and open MineSweeper.xcworkspace.
+
+```
+pod install
+```
